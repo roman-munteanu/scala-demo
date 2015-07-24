@@ -7,7 +7,7 @@ import scala.language.dynamics
  */
 class MyDynamicClass extends Dynamic {
   def applyDynamic(methodName: String)(args: Any*) = s"custom dynamic result with methodName: $methodName"
-
+  
   def applyDynamicNamed(name: String)(args: (String, Any)*) {
     println(s"""Creating a $name, for:\n "${args.head._1}": "${args.head._2}" """)
   }
