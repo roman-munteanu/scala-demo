@@ -1,4 +1,4 @@
-package com.munteanu.demo.caseclasses
+package com.munteanu.demo.case_classes
 
 /**
  * Created by romunteanu on 7/10/2015.
