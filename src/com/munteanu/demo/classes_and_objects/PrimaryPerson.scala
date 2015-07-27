@@ -7,7 +7,7 @@ package com.munteanu.demo.classes_and_objects
 class PrimaryPerson(fullName: String) {
 //  val firstName: String = fullName.split(' ').head
 //  val lastName: String = fullName.split(' ').tail.head
-  
+
   val (firstName, lastName) = {
     val arr = fullName.split(' ')
     (arr(0), arr(1))
