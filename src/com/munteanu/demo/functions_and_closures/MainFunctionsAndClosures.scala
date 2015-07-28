@@ -15,7 +15,7 @@ object MainFunctionsAndClosures extends App {
   }
   println(increaseWithMoreLines(5))
 
-  val numbers = List(-11, -10, -5, 0, 5, 10, 11)
+  val numbers = List(-11, -10, -5, 0, 5, 10)
 //  numbers.foreach((x: Int) => println(x))
   numbers.foreach(println _)
 
@@ -26,4 +26,28 @@ object MainFunctionsAndClosures extends App {
   val f = (_: Int) + (_: Int)
   println(f(5, 10))
 
+  // closures
+  val more = 99
+  val addMore = (x: Int) => x + more
+  addMore(10)
+
+  var sum = 0
+  numbers.foreach(sum += _)
+  println(s"sum: $sum")
+
+  def makeIncreaser(someMore: Int) = (x: Int) => x + someMore
+  val inc10 = makeIncreaser(10)
+  val inc99 = makeIncreaser(99)
+  println(inc10(1))
+  println(inc99(10))
+
+  // special calls
+  def echo(args: String*) = args.foreach(arg => println(arg))
+  echo("alpha", "beta", "gamma", "delta")
+
+  val arr = Array("Red", "Green", "Blue")
+  echo(arr: _*)
+
+  def speed(distance: Float, time: Float): Float = distance / time
+  println(speed(time = 10, distance = 100))
 }
