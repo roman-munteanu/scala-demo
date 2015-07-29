@@ -52,7 +52,7 @@ object MainStackableModifications {
 
     class IncDouQueue extends BasicIntQueue with Incrementing with Doubling
     class DouIncQueue extends BasicIntQueue with Doubling with Incrementing
-    
+
     val incDouQueue = new IncDouQueue
     incDouQueue.put(1)
     println(s"IncDouQueue: " + incDouQueue.get()) // 3
