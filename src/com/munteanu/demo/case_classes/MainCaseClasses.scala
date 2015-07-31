@@ -55,4 +55,11 @@ object MainCaseClasses extends App {
     case _ => false
   }
   println(isStringArray(Array(true)))
+
+  // pattern guard
+  def simplifyAdd(expr: Expr) = expr match {
+    case BinOp("+", x, y) if x == y => BinOp("*", x, Number(2))
+    case _ => expr
+  }
+
 }
