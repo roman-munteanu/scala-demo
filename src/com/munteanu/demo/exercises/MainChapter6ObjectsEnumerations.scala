@@ -3,15 +3,22 @@ package com.munteanu.demo.exercises
 /**
  * Created by romunteanu on 8/7/2015.
  */
-object MainObjectsEnumerations {
+object MainChapter6ObjectsEnumerations {
   def main(args: Array[String]): Unit = {
 
     object Conversion {
-      def conversionRatio: Double = 0
       def inchesToCentimeters(howMany: Int): Double = ???
       def gallonsToLiters(howMany: Int): Double = ???
       def milesToKilometers(howMany: Int): Double = ???
     }
+
+    abstract class UnitConv(val factor: Double) {
+      def convert(value: Int): Double = value * factor
+    }
+
+    object MtoK extends UnitConv(1.6)
+    object ItoC extends UnitConv(2.54)
+
 
     abstract class UnitConversion {
       def conversionRatio: Double
@@ -22,12 +29,12 @@ object MainObjectsEnumerations {
     }
 
     object MilesToKilometers extends UnitConversion {
-      override val conversionRatio = 1.8
+      override val conversionRatio = 1.6
     }
     println("MilesToKilometers: " + MilesToKilometers.convert(3))
 
     object InchesToCentimeters extends UnitConversion {
-      override def conversionRatio: Double = 2.14
+      override def conversionRatio: Double = 2.54
     }
 
     // companion objects
