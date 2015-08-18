@@ -77,7 +77,7 @@ object MainChapter8Inheritance {
     class Circle extends Shape {
       override def centerPoint = ???
     }
-    
+
     // 7
     class Square(cornerPoint: Point, width: Int) extends java.awt.Rectangle(cornerPoint.x, cornerPoint.y, width, width) {
       def this(width: Int) {
