@@ -1,13 +1,16 @@
 package com.munteanu.demo.exercises
 
+import scala.collection.mutable.ListBuffer
+
 /**
  * Created by romunteanu on 8/20/2015.
  */
 object MainExercises99Part21_30 {
   def main(args: Array[String]): Unit = {
+
     /*
 //    val pattern = "\"\\s*([^ ]+)\\s*==\\s*([^ ]+)\\s*\"".r
-      val pattern = """\"\s*([^\s]+)\s*==\s*([^\"]+)\s*\"""".r
+    val pattern = """\"\s*([^\s]+)\s*==\s*([^\"]+)\s*\"""".r
 //    val pattern = "([a-zA-Z]+)==([a-zA-Z0-9\\s]+)".r
 
     val filter = "\" name  == Topup Consumer    \""
@@ -16,20 +19,15 @@ object MainExercises99Part21_30 {
       case pattern(key, value) => println(s"key: '$key' value: '$value'")
       case _ => println("doesn't match")
     }
-  */
-
-
 
 
     val sample = " \" name == Packaging Service Platform \" "
 
-//    val pattern = """^\"([^\"]+)\"$""".r
-//    sample.trim match {
-//      case pattern(inside) => println(inside)
-//      case _ => println("doesn't match")
-//    }
-
-
+    val pattern = """^\"([^\"]+)\"$""".r
+    sample.trim match {
+      case pattern(inside) => println(inside)
+      case _ => println("doesn't match")
+    }
 
     val validFilterKeys = List("name")
     case class Filter(key: String, value: String)
@@ -45,6 +43,7 @@ object MainExercises99Part21_30 {
     }
 
     println(validate(Some(sample)))
+    */
 
   }
 }
