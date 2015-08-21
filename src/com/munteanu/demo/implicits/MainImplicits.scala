@@ -18,5 +18,7 @@ object MainImplicits {
       if (order(a) < b) a else b
 
     println(smaller(40, 2))
+
+//    println("qwe  == ert".split("\\s+==\\s+").toList)
   }
 }

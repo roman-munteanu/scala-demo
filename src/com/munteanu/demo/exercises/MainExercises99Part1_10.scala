@@ -3,7 +3,7 @@ package com.munteanu.demo.exercises
 /**
  * Created by romunteanu on 8/18/2015.
  */
-object MainExercises99 {
+object MainExercises99Part1_10 {
   def main(args: Array[String]): Unit = {
 
     // 1
@@ -89,15 +89,21 @@ object MainExercises99 {
 
     // 6
     println("6: Find out whether a list is a palindrome.")
-    // TODO
-//    val sampleList1 = List(1, 2, 3, 2, 1)
-//    val sampleList2 = List(1, 2, 3, 4, 2, 1)
-//    def isPalindrome[A](ls: List[A]): Boolean = {
-//      case Nil => false
-//      case x :: Nil => true
-//      case h :: tail if h == tail.last => isPalindrome(tail.dropRight(1))
-//    }
-//    println(isPalindrome(sampleList1))
-//    println(isPalindrome(sampleList2))
+    val sampleList1 = List(1, 2, 3, 2, 1)
+    val sampleList2 = List(1, 2, 3, 4, 2, 1)
+    val sampleList3 = List(1, 2, 3, 3, 2, 1)
+    def isPalindrome[A](ls: List[A]): Boolean = ls match {
+      case Nil => true
+      case x :: Nil => true
+      case h :: tail if h == tail.last => isPalindrome(tail.dropRight(1))
+      case _ => false
+    }
+    println("sampleList1 isPalindrome: " + isPalindrome(sampleList1))
+    println("sampleList2 isPalindrome: " + isPalindrome(sampleList2))
+    println("sampleList3 isPalindrome: " + isPalindrome(sampleList3))
+
+    def isPalindrome2[A](ls: List[A]): Boolean = ls == ls.reverse
+    println("sampleList1 isPalindrome2: " + isPalindrome2(sampleList1))
+    println("sampleList2 isPalindrome2: " + isPalindrome2(sampleList2))
   }
 }
