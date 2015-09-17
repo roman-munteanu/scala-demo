@@ -29,31 +29,30 @@ object MainAssignments extends App {
 
 //  println(Lists.sum(sampleList))
 
-  // pascal(0,2)=1, pascal(1,2)=2 and pascal(1,3)=3
-  // 1
-  // 1 1
-  // 1 2 1
-  // 1 3 3 1
-  // 1 4 6 4 1
+  def pascal(c: Int, r: Int): Int = {
 
-//  def pascal(c: Int, r: Int): Int = {
-//  }
+    def nextRow(xs: List[Int]): List[Int] = xs match {
+      case Nil => Nil
+      case head :: Nil => Nil
+      case head :: tail => (head + tail.head) :: nextRow(tail)
+    }
 
-  def triangle(xs: List[Int]): List[Int] = xs match {
-    case Nil => Nil
-    case head :: Nil => Nil
-    case head :: tail => (head + tail.head) :: triangle(tail)
+    def render(row: List[Int], r: Int): List[Int] = {
+      val nr = (1 :: nextRow(row)) :+ 1
+      if (r > 1)
+        render(nr, r - 1)
+      else
+        nr
+    }
+
+    render(List(1), r)(c)
   }
-//  println(triangle(List(1,2,1)).mkString(" "))
 
-  def func(n: Int): List[Int] = {
-    var xs = List(1, 1)
-    for (i <- 0 until n)
-      xs = (1 :: triangle(xs)) :+ 1
-    xs
+  for (row <- 0 to 10) {
+    for (col <- 0 to row)
+      print(pascal(col, row) + " ")
+    println()
   }
-//  println(func(0))
-
 
   // Parentheses Balancing
   // ( ( ) ( ) )
