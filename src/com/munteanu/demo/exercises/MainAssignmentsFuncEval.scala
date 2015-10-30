@@ -3,7 +3,7 @@ package com.munteanu.demo.exercises
 /**
  * Created by romunteanu on 9/16/2015.
  */
-object MainAssignments extends App {
+object MainAssignmentsFuncEval extends App {
 
   object Lists {
 //    def max(xs: List[Int]): Int = {
